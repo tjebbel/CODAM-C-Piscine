@@ -73,7 +73,7 @@ char *ft_strjoin(int size, char **strs, char *sep)
     i = -1;
 
     // Allocate memory for the result string
-    if ((res = malloc(sizeof(char) * (len + 1))) == NULL)
+    if (!(res = malloc(sizeof(char) * (len + 1))))
         return (0); // Return NULL if memory allocation fails
 
     // Concatenate strings with the separator
