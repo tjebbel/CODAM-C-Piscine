@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//Assignment: check the limit of capitalized letters
+
 int	ft_str_is_uppercase(char *str)
 {
 	int	i;

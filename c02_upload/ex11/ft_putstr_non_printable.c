@@ -12,6 +12,8 @@
 
 #include <unistd.h>
 
+// assignment: \ + two small hexanumbers for bytes below 32 or above 126 (non-printable ASCII)
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);

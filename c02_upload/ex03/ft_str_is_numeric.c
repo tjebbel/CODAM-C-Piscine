@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Assignment: check the limit of numbers
+
 int	ft_str_is_numeric(char *str)
 {
 	int	i;

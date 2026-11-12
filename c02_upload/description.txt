@@ -1,1 +1,23 @@
-Content
+Strings: Copy, test and convert
+
+1. Building classical helper functions from <string.h> and <ctype.h>, like:
+- strcpy: copy everything until '\0', writes '\0' afterwards
+- strncpy: copies a maximum of n bytes and fill with ('\0') zeros, only if source isn shorter, if longer no ending
+- strlcpy: copy safely (nothing if size == 0), always exiting and tells the exact (strlen (src)) length (size - 1 signs + '\0') => you know if return >= size
+A copy is only a string until you have copied or written \0 at the ending
+
+2. Test each sign on a class (small/capitalized letter, number, printable characters(ASCII 32-126)) => empty string = 1
+
+3. Convert capitalized letters to small and vice versa (ASCII plus or minus 32)
+
+4. Start the word or sentence with a capitalized letter 
+What is a word? A series of alphanumeric signs (letters or numbers) => each word starts with a capital letter, all others are small.
+User a flag called new_word' that is true at the start and after each non-alphanumerical sign
+- ft_strcapitalize: set limits for words = non-alphanumerical signs
+
+5. Print invisible signs as hex (one byte is two hex numbers = "0123456789abcdef"[c /16] and [c % 16]) => use unsigned char so bytes 128-255 are not negative
+
+6. Show raw memory like a debugger
+- ft_print_memory: read the memory like a tabel, each line shows 16 bytes. the adress of a byte is the value of the pointer
+This is filled in hex up to 16 numbers, final line is filled with spaces so text column is straight
+print nothing if size == 0, use hexadresses, group and fill

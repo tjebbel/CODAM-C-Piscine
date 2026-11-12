@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Assignment: adjust the string to capitalise the first letter and limit the word when a non-alphanumerical sign occurs
+
 char	*ft_strlowcase(char *str)
 {
 	int	i;

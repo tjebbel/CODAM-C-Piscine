@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include <string.h>
 
+// Assignment: ize -1 signs + '\0', give back strlen(src), no copy if size == 00
+
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;

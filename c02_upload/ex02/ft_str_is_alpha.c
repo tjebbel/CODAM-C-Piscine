@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Assignment: check the limit of small and capitalized letters
+
 int	ft_str_is_alpha(char *str)
 {
 	int	i;

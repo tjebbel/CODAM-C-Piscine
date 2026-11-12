@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Assignment: adjust the string to uppercase and give back the same pointer
+
 char	*ft_strupcase(char *str)
 {
 	int	i;

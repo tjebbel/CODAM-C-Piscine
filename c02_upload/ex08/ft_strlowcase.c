@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Assignment: adjust the string to lowercase and give back the same pointer
+
 char	*ft_strlowcase(char *str)
 {
 	int	i;

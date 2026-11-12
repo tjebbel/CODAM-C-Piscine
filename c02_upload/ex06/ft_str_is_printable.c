@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//Assignment: check the limit of printable characters
+
 int	ft_str_is_printable(char *str)
 {
 	int	i;

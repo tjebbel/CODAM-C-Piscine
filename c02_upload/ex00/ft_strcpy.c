@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
+// Assignment: copy until '\0', then add '\0' to write the string
+
 char	*ft_strcpy(char *dest, char *src)
 
 {

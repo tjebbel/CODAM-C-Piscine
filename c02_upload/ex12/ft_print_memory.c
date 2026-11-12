@@ -10,8 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <unistd.h>
+
+// assignment: Read memory as a table with each kline showing 16 bytes. Adress of a byte is the value of pointer itself.
+// last line is filled with spaxes so text column remains straight
 
 void	ft_putchar(char c, int size)
 {
