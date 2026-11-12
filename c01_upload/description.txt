@@ -1,24 +1,11 @@
-Foundations
+Pointers
 
-Command line shell
-1. Environment setup & Basics of Unix Shell (shell00)
-2. (shell01)
+Functions receive copies from their arguments. 
+If you want to change a variable of the called function, an address is needed - a pointer in computer terms.
+Pointers are read from right to left (int **p) = "p is a pointer to a pointer to an int"
+There are two types of pointers 
+1. declaration => (int *a) : the star belongs to the type
+2. expression => *a = *b : go to address and use value of this pointer
 
-C - programming
-3. Execution, signs and loops
-Use write to display results of functions on the screen, 
-What is the difference between whole numbers / integers, floats / longs and how to loop over these numbers and their sign.
-How to combine loops into nested loops -> b = a + 1 (non-repeating, ascending numbers)
-How to make a number a sign => = number + '0'
-Printing a number => splitting the numbers by '/ 10'(using the first number if more than 1) and '% 10' (using the remainder)
-
-
-Functions:
-You can give a string like "N" as it is already an adress like:  write(1, 'N'', 1)
-write(1, &c, 1) => print the one byte of what is in the value of c 
-'&' refers to the adress / place of this value, and the final 1 to totl bytes copied
-
-Memory aids: 
-- write("Where, Adress, Count")
-- ft_putnbr: "Sign, Decrease, Display" => print minus sign, call the n/10 (first number) and display n%10(remainder)
-
+& = address or '&x' "write down address of the house"
+* = touch or '*p' "look inside the house on the address"

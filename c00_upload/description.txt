@@ -1,4 +1,4 @@
-Foundations
+Foundations: Output, signs and loops
 
 Command line shell
 1. Environment setup & Basics of Unix Shell (shell00)
