@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// assignment: will run as long as signs are equal and not '\0', 
+//then it will give the difference of the first different bytes as an unsigned char, only the sign counts
+//these functions are the tools to sort words, analyse and disjoint text and search for words etc.
+// "cmp" = first difference wins, check loop and return conditions
+
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;

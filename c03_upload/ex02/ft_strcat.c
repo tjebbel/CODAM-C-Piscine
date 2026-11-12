@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// assignment: - strcat: searches for the end of dest and copies src there, so dest must be large enough (function cannot control)
+// these functions are the tools to sort words, analyse and disjoint text and search for words etc.
+// search for the end, copy and quit
+
 char	*ft_strcat(char *dest, char *src)
 {
 	unsigned int	i;

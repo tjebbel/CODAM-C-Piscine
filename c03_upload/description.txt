@@ -1,1 +1,13 @@
-Content
+Comparing, combining and searching Strings
+
+1. Rebuilding the functions:
+- strcmp: will run as long as signs are equal and not '\0', 
+        then it will give the difference of the first different bytes as an unsigned char, only the sign counts
+- strncmp: compares up to n signs; if n == 0 -> 0
+- strcat: searches for the end of dest and copies src there, so dest must be large enough (function cannot control)
+- strncat: adds the limit of nb signs and always adds a '\0'
+- strstr: tries from each starting point to make to_find fit; empty gives back str; not found is NULL(0)
+- strlcat: gives back the length of the string it was trying to make [ min(size, strlen(dest)) + strlen(src)]
+these functions are the tools to sort words, analyse and disjoint text and search for words etc.
+
+

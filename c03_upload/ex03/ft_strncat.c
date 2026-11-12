@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// assignment: strncat: adds the limit of nb signs and always adds a '\0'
+// these functions are the tools to sort words, analyse and disjoint text and search for words etc.
+// limit and always quit
+
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;

@@ -13,6 +13,10 @@
 /* #include <stddef.h>
 #include <stdint.h> */
 
+// assignment: strncmp: compares up to n signs; if n == 0 -> 0
+// these functions are the tools to sort words, analyse and disjoint text and search for words etc.
+// extra limit of comparing up to index n - 1
+
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;

@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// assignment: strstr: tries from each starting point to make to_find fit; empty gives back str; not found is NULL(0)
+// these functions are the tools to sort words, analyse and disjoint text and search for words etc.
+// nested loop: outside = starting point, inside = length of match
+
 int	ft_strlen(char *str)
 {
 	int	i;
