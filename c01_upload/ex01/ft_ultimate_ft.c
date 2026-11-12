@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
+// Assignment: Create a nine level referenced pointer, so that x is a pointer to a pointer (nine times)
+
 void	ft_ultimate_ft(int *********nbr)
 {
 	*********nbr = 42;

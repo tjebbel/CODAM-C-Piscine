@@ -12,6 +12,9 @@
 
 #include <stdio.h>
 
+// Assignment: Use a sorting algorithmn (like bubble sort) on an array
+
+
 void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i; // Loop counter for the outer loop

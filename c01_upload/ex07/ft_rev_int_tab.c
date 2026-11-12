@@ -12,6 +12,9 @@
 
 #include <stdio.h>
 
+// Assignment: Swap the mirrored elements (i en size-1-i) u
+// Until you reach the middle as then all will be in the right order
+
 void	ft_rev_int_tab(int *tab, int size)
 {
 	int	i;

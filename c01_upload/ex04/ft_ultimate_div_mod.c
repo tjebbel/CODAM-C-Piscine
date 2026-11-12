@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
+// Assignment: Calculate both results before overwriting the *a, check the order(!)
+
 void	ft_ultimate_div_mod(int *a, int *b)
 {
 	int	div;

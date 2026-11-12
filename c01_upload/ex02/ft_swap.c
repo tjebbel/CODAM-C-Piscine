@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
+// Assignment: Swap the temporary variable with the help of pointers
+
 void	ft_swap(int *a, int *b)
 {
 	int	backup;

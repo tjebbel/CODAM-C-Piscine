@@ -12,6 +12,8 @@
 
 #include <unistd.h>
 
+// Assignment: Walk through a string until you reach the end ('\0')
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);

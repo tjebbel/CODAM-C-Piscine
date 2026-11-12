@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
+// Assignment: Give two values back through output pointers
+
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {
 	*div = a / b;

@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-// Assignment:
+// Assignment: Deference a pointer to change the variable 
 
 void	ft_ft(int *nbr)
 {
