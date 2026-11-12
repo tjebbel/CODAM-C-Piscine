@@ -12,6 +12,9 @@
 
 #include <unistd.h>
 
+// Assignment: Signs and letters are numbers found in the ASCII-table and how to use main and void function
+// Also using while loops that add (ascending)
+
 void	ft_print_numbers(void)
 {
 	char	digit;

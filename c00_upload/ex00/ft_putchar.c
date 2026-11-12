@@ -13,6 +13,8 @@
 #include <unistd.h>
 #include <stdio.h>
 
+// Assignment: Tests whether you can call the system to use the write function correctly and giving it the right address
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);

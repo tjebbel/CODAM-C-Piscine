@@ -12,6 +12,8 @@
 
 #include <unistd.h>
 
+// Assignment: using if/else statement to write the positive values (and zero)
+
 void	ft_is_negative(int n)
 {
 	if (n >= 0)

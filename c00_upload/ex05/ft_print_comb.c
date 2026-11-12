@@ -12,7 +12,12 @@
 
 #include <unistd.h>
 
-void	ft_putchar(char c);
+// Assignment: Understand how to make three nested loops where a < b < c so that 789 is the final value and the separation sing of ", " stops
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	ft_print_comb(void)
 {
@@ -44,13 +49,13 @@ void	ft_print_comb(void)
 }
 
 	//TEST CASE
+/* 
 int	main(void)
 {
 	ft_print_comb();
 	return (0);
 }
-
-
+*/
 /* 
 The function ft_print_comb is intended to print all possible combinations of three different digits in ascending order, separated by commas and spaces.
 

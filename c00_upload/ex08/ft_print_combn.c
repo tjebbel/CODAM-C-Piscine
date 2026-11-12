@@ -12,6 +12,9 @@
 
 #include <unistd.h>
 
+// Assignment: Recursion to expand nested loops of defined number to an undefined value of n
+// How to use an array as a counter 
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);

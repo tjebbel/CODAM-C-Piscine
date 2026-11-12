@@ -12,6 +12,9 @@
 
 #include <unistd.h>
 
+// Assignment: How to format two numbers by using /10 and %10
+// How to pair a < b, from 00 01 to 98 99
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
