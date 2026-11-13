@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// assignment: dissect: isspace-whitespaces (ASCII:9-13 and 32), each amount +/- (uneven - is negative),
+// numbers until the next sign, overflow is undefined, so no special treatments
+
 int	ft_atoi(char *str)
 {
 	int	n;

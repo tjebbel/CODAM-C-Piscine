@@ -12,6 +12,8 @@
 
 #include <stddef.h>
 
+// assignment: count the number of signs/values and exclude the end ('\0'), print using write
+
 int	ft_strlen(char *str)
 {
 	int	length;

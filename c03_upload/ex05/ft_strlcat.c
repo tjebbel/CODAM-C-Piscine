@@ -23,7 +23,7 @@
 // what is the meaning of the size of the whole buffer and the return value?
 
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+char	*ft_strncat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	dlen;
 	unsigned int	slen;

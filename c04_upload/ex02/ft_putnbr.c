@@ -12,6 +12,8 @@
 
 #include <unistd.h>
 
+// assignment: How to use recursion, deal with negative numbers trap(s) like the overflow at INT_MIN
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);

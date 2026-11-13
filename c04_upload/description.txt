@@ -1,1 +1,28 @@
-Content
+Converting numbers to text and vice versa + numeral systems
+
+You can print an int with ft_putnbr and ft_atoi will read this int from a text, and both are in each base as a string of symbols
+1. a base is a list of symbols, the length of this is the base. The value of a number is the index of the symbol in the string
+    - An invalid base is empty or one sign, double signs, + or -, and for ft_atoi_base also whitespaces
+    Then, ft_putnbr_base will print nothing and ft_atoi_base will return 0  
+2. printing in base b is the recursive putnbr with / b and % b instead of 10
+3. ft_atoi skips whitespaces, \t, \n, \v, \f, \r (ASCII: 9-13), stops at first non-number
+    - for each amount it switches + to - and vice versa
+    - for each number resut = result * 10 + (c - '0')
+
+Positional notation:
+- one rule for each base
+base 10 => 4213 = 4 * 10^3 + 2 * 10^2 + 1 * 10 + 3 
+base 2 => 101 = 1 * 4 + 0 * 2 + 1 = 5
+If you read from left to right you calculate it without exponentation, like:
+    result = 0
+    '1' -> result = 0 * 2 + 1 = 1
+    '0' -> result = 1 * 2 + 0 = 2
+    '1' -> result = 2 * 2 + 1 = 5
+If you write this is in reverse => take n % b (last number) en nb (rest)
+With a base of 8 symbols like poneyvif:
+    10 = 1 * 8 + 2 -> symbols "o" (index 1) en "n" (index 2) -> "on
+
+Memory aid:
+For each atoi: "Spaces, Signs, Scan", skip spaces, count signs (+/-), and scan the numbers
+Multiply and add (r = r * base + number) to read and the rest to write ( n % base, n / base)
+
