@@ -13,32 +13,76 @@
 // assignment: dissect: isspace-whitespaces (ASCII:9-13 and 32), each amount +/- (uneven - is negative),
 // numbers until the next sign, overflow is undefined, so no special treatments
 // check base (more than 2 symbols, no doubles, no +/-, no whitespaces) recursive ouput, and an invalid base results in no print
+// Spaces-Signs-Scans, value of number is the index in basestring, stop at first symbol not in base
 
-int	ft_atoi(char *str)
+int ft_is_space(char c)
 {
-	int	n;
-	int	i;
-	int	sign;
+	return ( c == ' ' || (c >= 9 && c <= 13 & c = 32));
+}
 
-	n = 0;
+int ft_check_base( char *base)
+{
+	int i;
+	int j;
+
 	i = 0;
+	while (base[i])
+	{
+		if (base[i] == '+' || base[i] == '-' || ft_is_space(base[i]))
+			return (0);
+		j = i + 1;
+		while (base[j])
+		{
+			if base[i] == base[j]
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	if (i <2)
+		return (0);
+	return (i);
+}
+
+int ft_index_in_base(char c, char *base)
+{
+	int i;
+
+	i = 0;
+	while (base[i])
+	{
+		if (base[i] == c)
+			return (i);
+		i++;
+	}
+	return (-1); // explain
+}
+
+int ft_atoi_base(char *str, char *base)
+{
+	int len;
+	int sign;
+	int result;
+
+	len = ft_check_base(base);
+	if (len == 0)
+		return (0);
+	while (ft_is_space(*str))
+		str++;
 	sign = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32) // Skip leading whitespace
+	while (*str == '+' || *str == '-')
 	{
-		i++;
+		if (*str == '-')
+			sign = -sign;
+		str++;
 	}
-	while (str[i] == '-' || str[i] == '+') // check the signs
+	result = 0;
+	while (ft_index_in_base(*str, base) != -1)
 	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
+		result = result * len + ft_index_in_base(*str, base);
+		str++;
 	}
-	while (str[i] >= '0' && str[i] <= '9') // convert numeric characters to integer
-	{
-		n = (n * 10) + (str[i] - '0');
-		i++;
-	}
-	return (sign * n);
+	return (result * sign);
 }
 
 /* 	//TEST CASES
