@@ -1,1 +1,10 @@
-Content
+Programs and command rule arguments
+
+Learn how to delivere programs (main) instead of functions, printing the name of program, arguments (in revere or ASCII-sorted)
+- argc = counting, it is a number
+- argv = pointing, it is a list pointing to words
+- index 0 is always the program itself, so usually not printed
+- after each argument there usually is a new line
+- use ft_putstr(c01), ft_strcmp(c03) and a simple sorting algorithm, like Bubble Sort, from c01 
+- char ** argv is an array of pointers to strings -> sorting means the pointers are swapped and not that the signs are copied
+- int main(int argc, char **argv): argc = amount of words on command line, argv[0] = program name as typed
