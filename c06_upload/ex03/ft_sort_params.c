@@ -12,6 +12,8 @@
 
 #include <unistd.h>
 
+// Assignment: sort the array of strings using strcmp
+
 // Function to compare two strings
 int	ft_strcmp(char *s1, char *s2)
 {

@@ -12,6 +12,8 @@
 
 #include <unistd.h>
 
+// assignment: loop backwards, so from the final word [argc - 1], excluding '\0' back to 1
+
 int	main(int argc, char **argv)
 {
 	int	c; // Variable to track the current argument index

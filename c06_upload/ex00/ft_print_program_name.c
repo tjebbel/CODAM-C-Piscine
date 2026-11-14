@@ -12,6 +12,8 @@
 
 #include <unistd.h>
 
+// assignment = argv[0]
+
 void	ft_putstr(char *str)
 {
 	int	i;

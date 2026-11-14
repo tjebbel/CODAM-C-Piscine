@@ -12,6 +12,8 @@
 
 #include <unistd.h>
 
+// assignment: loop from 1 until the final word [argc - 1], excluding '\0'
+
 // Function to print a single character
 void	ft_putchar(char c)
 {
