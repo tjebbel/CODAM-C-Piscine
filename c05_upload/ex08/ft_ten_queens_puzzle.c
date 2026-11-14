@@ -83,3 +83,4 @@ void ft_solve(int *cols, int col, int *count)
         ft_solve(cols, 0, &count);
         return (count);
     }
+    
