@@ -12,6 +12,19 @@
 
 #include <stdlib.h>
 #include <string.h>
+/*
+Dynamic Memory Allocation: In C, we often use malloc to allocate memory during runtime. 
+This is crucial for creating variables whose size isn't known at compile time.
+Strings in C: Strings are represented as arrays of characters terminated by a null character ('\0'). 
+nderstanding how to manipulate these arrays is essential for string handling in C.
+Pointer Basics: Pointers are variables that store memory addresses. They are fundamental in C for dynamic memory management.
+
+It takes a single argument, a pointer to a character array (string).
+It calculates the length of the input string.
+It allocates memory for the duplicate string.
+It copies the original string into the newly allocated memory.
+Finally, it returns a pointer to the duplicated string.
+*/
 
 // assignment: Measure, malloc(len + 1), copy - only malloc (no strlen and strcopy)
 
@@ -23,8 +36,8 @@ char *ft_strdup(char *src)
 
 	len = 0;
 	while(src[len])
-		len++;
-	dup = malloc(sizeof(char) * (len + 1))
+		len++; // calculates the length
+	dup = malloc(sizeof(char) * (len + 1)); // allocates the memory
 	if (!dup)
 		return (NULL);
 	i = 0;
@@ -33,7 +46,7 @@ char *ft_strdup(char *src)
 		dup[i] = src[i];
 		i++;
 	}
-	dup[i] = '\0';
+	dup[i] = '\0'; // copies the string with null terminator
 	return(dup);
 }
 

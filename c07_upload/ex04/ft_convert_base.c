@@ -12,16 +12,27 @@
 
 #include <stdlib.h>
 #include <string.h>
+/*
+Base: A base is the number of unique digits, including zero, used to represent numbers in a positional numeral system. For example, base 10 (decimal) uses digits 0-9, while base 2 (binary) uses digits 0 and 1.
+
+ft_check_base: This function checks if the provided base is valid according to specific rules (like no duplicate characters and valid characters).
+
+ft_atoi_base: This function converts a string representation of a number in a specified base to a long integer.
+
+ft_itoa_base: This function converts a long integer back into a string representation in a specified base.
+
+Memory Management: The code uses dynamic memory allocation to create strings, which is crucial for handling variable-length outputs.
+*/
 
 // assignment: 
 // check each base with rules of c04 (Spaces, Signs, Scans) and no white spaces; invalid means NULL
 // use ft_atoi_base for nbr to read a long, reserve the result and split it over two files with a limit of 5 functions
 // ft_itoa_base: : count numbers(+1 for each -), malloc (numbers + 1), fill from the right with n % base or len, prefixed by '-' if negative
 
-int ft_check_base(char * base);
-long ft_atoi_base(char * str, char * base, int len);
+int ft_check_base(char * base); // validate the base
+long ft_atoi_base(char * str, char * base, int len); // converts a string to a long integer based on specific base
 
-int ft_count_digits( long n, int len)
+int ft_count_digits( long n, int len) // Counts the number of digits required to represent a number in a given base.
 {
     int count;
 
@@ -39,7 +50,7 @@ int ft_count_digits( long n, int len)
     return (count);
 }
 
-char *ft_itoa_base(long n, char *base, int len)
+char *ft_itoa_base(long n, char *base, int len) // Converts a long integer to a string representation in a specified base.
 {
     char *result;
     int size;
@@ -66,7 +77,7 @@ char *ft_itoa_base(long n, char *base, int len)
     return (result);
 }
 
-char *ft_convert_base(char *nbr, char *base_from, char *base_to)
+char *ft_convert_base(char *nbr, char *base_from, char *base_to) // The main function that ties everything together, converting a number from one base to another.
 {
     int len_from;
     int len_to;

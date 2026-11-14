@@ -10,6 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Whitespace Handling: The code checks for spaces and other whitespace characters (ASCII 9-13 and 32) to ensure they are ignored during conversion.
+Base Validation: The base string must contain valid characters without duplicates, and it should not include signs or whitespace.
+Indexing in Base: The program determines the index of a character in the base string to convert it to its corresponding integer value.
+Sign Handling: The code accounts for positive and negative signs in the input string.
+*/
+
 // assignment: dissect: isspace-whitespaces (ASCII:9-13 and 32), each amount +/- (uneven - is negative),
 // numbers until the next sign, overflow is undefined, so no special treatments
 // check base (more than 2 symbols, no doubles, no +/-, no whitespaces) recursive ouput, and an invalid base results in no print
@@ -17,10 +24,10 @@
 
 int ft_is_space(char c)
 {
-	return ( c == ' ' || (c >= 9 && c <= 13 & c = 32));
+	return ( c == ' ' || (c >= 9 && c <= 13 & c = 32)); // Checks if a character is a whitespace.
 }
 
-int ft_check_base( char *base)
+int ft_check_base( char *base) // Validates the base string.
 {
 	int i;
 	int j;
@@ -44,7 +51,7 @@ int ft_check_base( char *base)
 	return (i);
 }
 
-int ft_index_in_base(char c, char *base)
+int ft_index_in_base(char c, char *base) // Finds the index of a character in the base string.
 {
 	int i;
 
@@ -55,22 +62,22 @@ int ft_index_in_base(char c, char *base)
 			return (i);
 		i++;
 	}
-	return (-1); // explain
+	return (-1); // // Indicates that the character is not found in the base
 }
 
-int ft_atoi_base(char *str, char *base)
+int ft_atoi_base(char *str, char *base) // Converts the input string to an integer based on the specified base.
 {
 	int len;
 	int sign;
 	int result;
 
-	len = ft_check_base(base);
+	len = ft_check_base(base); // validate the bqse
 	if (len == 0)
 		return (0);
-	while (ft_is_space(*str))
+	while (ft_is_space(*str)) // skip whitespaces
 		str++;
 	sign = 1;
-	while (*str == '+' || *str == '-')
+	while (*str == '+' || *str == '-') // process signs
 	{
 		if (*str == '-')
 			sign = -sign;
@@ -80,9 +87,9 @@ int ft_atoi_base(char *str, char *base)
 	while (ft_index_in_base(*str, base) != -1)
 	{
 		result = result * len + ft_index_in_base(*str, base);
-		str++;
+		str++; // iterates through string, converting each character to corresponding integer value based on base until it encounters character not in base.
 	}
-	return (result * sign);
+	return (result * sign); 
 }
 
 /* 	//TEST CASES
@@ -114,16 +121,5 @@ int	main(void)
  */
 
 /* 
-The function ft_atoi converts a string to an integer. It takes a pointer to a character (a string) as an argument and returns the corresponding integer value.
-The function initializes three variables: n to store the resulting integer, i to keep track of the current index in the string, and sign to determine if the resulting integer should be positive or negative.
-The function first skips any leading whitespace characters (spaces, tabs, etc.) by checking if the current character is between ASCII values 9 and 13 or is a space (ASCII 32).
-Next, it checks for any optional sign characters ('-' or '+'). If it encounters a '-', it multiplies the sign variable by -1 to indicate that the resulting integer should be negative. 
-It continues to check for additional sign characters until it encounters a non-sign character.
-After processing the optional signs, the function enters a loop that continues as long as the current character is a digit (between '0' and '9').
-Inside this loop, it updates the value of n by multiplying the current value of n by 10 and adding the integer value of the current digit (obtained by subtracting '0' from the character).
-Once the loop exits, it means that the function has processed all the digits in the string. 
-Finally, it returns the resulting integer by multiplying n with sign to account for any negative sign that may have been encountered.
-In the main function, we declare several test strings that contain various combinations of whitespace, signs, digits, and non-digit characters.
-We then call ft_atoi with each of these test strings and print the resulting integer values to verify that the function correctly converts the strings to integers according to the rules of the atoi function.
-The expected output will show the integer values corresponding to the valid parts of the input strings, with appropriate handling of signs and ignoring any non-digit characters after the digits.
+
 */

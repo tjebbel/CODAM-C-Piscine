@@ -30,19 +30,34 @@ char	*ft_strncat(char *dest, char *src, unsigned int size)
 	unsigned int	i;
 
 	dlen = 0;
-	while (dlen < size && dest[dlen])
+	while (dlen < size && dest[dlen]) // calculates length of destination
 		dlen ++;
 	slen = 0;
-	while (src[slen])
+	while (src[slen]) // calculates length of source
 		slen++;
-	if (dlen == size)
+	if (dlen == size) // If dest is full, return total length
 		return (size + slen);
 	i = 0;
 	while(src[i] && dlen + i < size - 1)
 	{
-		dest[dlen + i] = src[i];
+		dest[dlen + i] = src[i]; // Append src to dest
 		i++;
 	}
 	dest[dlen + 1] = '\0';
 	return (dlen + slen);
 }
+
+/*
+The ft_strncat function follows a structured approach:
+
+1. Calculate the Lengths: It first calculates the lengths of the destination and source strings.
+The first two while loops calculate the lengths of dest and src. The length of dest is limited by size to prevent overflow.
+2. Check Buffer Size: It checks if the destination string has enough space to accommodate the source string.
+If dlen equals size, it indicates that there is no space left in dest for concatenation, and the function returns the total length of the intended concatenated string.
+3. Concatenate Strings: If there is enough space, it appends the source string to the destination string.
+The third while loop appends characters from src to dest until either the end of src is reached or there is no more space in dest (leaving room for the null terminator).
+4. Null-Termination: It ensures that the resulting string is null-terminated.
+After the loop, the function ensures that the resulting string is properly null-terminated.
+5. Return Length: Finally, it returns the total length of the concatenated string.
+Finally, it returns the total length of the concatenated string, which is useful for the caller to know how much space is needed.
+*/

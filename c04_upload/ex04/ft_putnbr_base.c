@@ -11,12 +11,18 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+/*
+Base: A numeral system's base indicates how many unique digits, including zero, are used to represent numbers. For example, base 10 uses digits 0-9, while base 2 uses 0 and 1.
+Validation: The base must be validated to ensure it contains more than two unique symbols, does not include '+' or '-', and has no duplicate characters.
+Negative Numbers: The program handles negative integers by printing a '-' sign before the number.
+Recursion: The conversion process uses recursion to break down the number into manageable parts for printing.
+*/
 
 // assignment: check base (more than 2 symbols, no doubles, no +/-)
 // negative numbers get - and an invalid base results in no print
 // use long for INT_MIN, print -, recursive output with / len and % len
 
-void	ft_base_len(char *base)
+void	ft_base_len(char *base) // Validates the base and returns its length.
 {
 	int i;
 	int j;
@@ -24,10 +30,10 @@ void	ft_base_len(char *base)
 	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-')
+		if (base[i] == '+' || base[i] == '-') // invalid character check
 			return (0);
 		j = i + 1;
-		while (base[j])
+		while (base[j]) // check duplicates
 		{
 			if (base[i] == base[j])
 				return (0);
@@ -35,33 +41,33 @@ void	ft_base_len(char *base)
 		}
 		i++;
 	}
-	if ( i < 2)
+	if ( i < 2) // Ensure the base has at least two unique symbols.
 		return (0);
-	return (i);
+	return (i); // Return the length of the valid base.
 }
 
-void	ft_put_in_base (long n, char *base, int len)
+void	ft_put_in_base (long n, char *base, int len) // Recursively prints the number in the specified base.
 {
-	if ( n >= len)
+	if ( n >= len) // If n is greater than or equal to the base length, continue recursion.
 		ft_put_in_base(n / len, base, len);
-	write(1, &base[n % len], 1);
+	write(1, &base[n % len], 1); // Print the corresponding character for the current digit.
 }
 
-void	ft_putnbr_base (int nb, char *base)
+void	ft_putnbr_base (int nb, char *base) // Main function that prepares the number for conversion and handles negative values.
 {
 	int len;
 	long n;
 
-	len = ft_base_len(base)
-	if (len == 0)
+	len = ft_base_len(base) // Validate the base and get its length.
+	if (len == 0) // If the base is invalid, exit the function.
 		return ;
-	n = nbr;
-	if (n < 0)
+	n = nb; // Use a long variable to handle INT_MIN correctly.
+	if (n < 0) // negative number check
 	{
-		write(1, "-", 1);
+		write(1, "-", 1); // print negative sign
 		n = -n;
 	}
-	ft_put_inbase(n, base, len);
+	ft_put_inbase(n, base, len); / Call the recursive function to print the number.
 }
 
 /* 	//TEST CASES
@@ -79,15 +85,18 @@ int	main(void)
   */
 
 /* 
-The function ft_putnbr takes an integer nb as an argument and prints it to the standard output.
-It first declares a long integer variable n and assigns it the value of nb. 
-This is done to handle the case when nb is the minimum integer value (-2147483648), which cannot be represented as a positive integer in a 32-bit signed integer.
-The function checks if n is negative. If it is, it prints a '-' character to indicate that the number is negative and then negates n to make it positive for further processing.
-Next, the function checks if n is greater than 9. If it is, it means that n has more than one digit. 
-In this case, it recursively calls ft_putnbr with n divided by 10 to print the digits before the last digit. 
-After the recursive call, it updates n to be the remainder of n divided by 10 to isolate the last digit.
-Finally, it prints the last digit of n by adding '0' to convert it from an integer to its corresponding ASCII character.
-In the main function, we call ft_putnbr with various test cases to verify that it correctly prints the integer values, including positive numbers, zero, and negative numbers.
-The expected output will be:
-42 2147483647 0 -2147483648
+ft_base_len:
+This function checks the validity of the base string.
+It ensures that the base contains no '+' or '-' characters and that all symbols are unique.
+If the base is valid and contains at least two symbols, it returns the length of the base; otherwise, it returns 0.
+
+ft_put_in_base:
+This function takes a long integer n, a base string, and the length of the base.
+It recursively divides n by the base length until n is less than the base length, printing the corresponding character from the base string for each remainder.
+
+ft_putnbr_base:
+This is the main function that prepares the integer for conversion.
+It first checks the validity of the base using ft_base_len.
+If the number is negative, it prints a '-' sign and converts the number to positive.
+Finally, it calls ft_put_in_base to perform the actual conversion and printing.
 */

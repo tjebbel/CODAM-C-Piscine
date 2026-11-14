@@ -12,6 +12,11 @@
 
 #include <stdlib.h>
 #include <string.h>
+/*
+Separators: Characters that define the boundaries between words. For example, spaces, commas, or any other punctuation marks can serve as separators.
+Dynamic Memory Allocation: The program uses malloc to allocate memory for words and the array of words. Proper handling of this memory is crucial to avoid leaks.
+Error Handling: The code includes mechanisms to free allocated memory if an error occurs during the word duplication process.
+*/
 
 // assignment:  ft_count_words skips separation marks, counts beginning of each word and skips the word
 // reserve count + 1 pointers, the last one begin NULL
@@ -22,7 +27,7 @@
 // Round 2: Reserve an array of strings - count +1 pointers (last one being NULL) - 
 // Round 3: Fill - measure length of each word, malloc(len + 1), copy and close
 
-int ft_is_sep(char c, char *charset)
+int ft_is_sep(char c, char *charset) // check if character is a separator
 {
     while (*charset)
     {
@@ -33,7 +38,7 @@ int ft_is_sep(char c, char *charset)
     return (0)
 }
 
-int ft_count_words(char *str, char *charset)
+int ft_count_words(char *str, char *charset) // count number of words in input string
 {
     int count;
 
@@ -50,7 +55,7 @@ int ft_count_words(char *str, char *charset)
     return (count);
 }
 
-char *ft_word_dup(char *start, char *charset)
+char *ft_word_dup(char *start, char *charset) // duplicates a word from input string
 {
     char *word;
     int len;
@@ -72,7 +77,7 @@ char *ft_word_dup(char *start, char *charset)
     return (word);
 }
 
-void *ft_free_all(char **tab, int filled)
+void *ft_free_all(char **tab, int filled) // frees all allocated memory in case of an error
 {
     while (filled > 0)
     {
@@ -83,7 +88,7 @@ void *ft_free_all(char **tab, int filled)
     return (NULL)
 }
 
-char **ft_split(char *str, char *charset)
+char **ft_split(char *str, char *charset) // main function splitting of string into words
 {
     char **tab;
     int w;

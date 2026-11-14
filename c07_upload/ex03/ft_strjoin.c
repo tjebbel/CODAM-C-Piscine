@@ -13,12 +13,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+/*
+Dynamic Memory Allocation: The code uses malloc to allocate memory for the resulting string. This is crucial for handling strings of varying lengths.
+String Length Calculation: The function calculates the total length of the resulting string based on the lengths of the individual strings and the separator.
+Pointer Manipulation: The code uses pointers to efficiently append strings and manage memory.
+*/
 
 // assignment: size <= 0 -> give back empty string that can be freed (malloc(1) + '\0')
 // total length = sum of lengths + (size - 1) * len(sep) + 1; size 0 is a "" that can be freed
 // ft_append copies a string and gives it back where it stopped, so that cursor moves, put separation mark between strings and quit at the end
 
-int ft_len(char *s)
+int ft_len(char *s) // calculate length of string
 {
     int len;
 
@@ -28,7 +33,7 @@ int ft_len(char *s)
     return (len)
 }
 
-int ft_total_len(int size, char **strs, char *sep)
+int ft_total_len(int size, char **strs, char *sep) //Computes total length required for final concatenated string.
 {
     int i;
     int total;
@@ -44,7 +49,7 @@ int ft_total_len(int size, char **strs, char *sep)
     return (total);
 }
 
-char *ft_append(char *dest, char *src)
+char *ft_append(char *dest, char *src) // appends each string to another
 {
     while (*src)
     {
@@ -55,7 +60,7 @@ char *ft_append(char *dest, char *src)
     return (dest);
 }
 
-char *ft_strjoin(int size, char **strs, char *sep)
+char *ft_strjoin(int size, char **strs, char *sep) // main function that combines all the above functionalities to join an array of strings.
 {
     char *result;
     char *cursor;
@@ -83,6 +88,17 @@ char *ft_strjoin(int size, char **strs, char *sep)
     *cursor = '\0'
     return (result)
 }
+
+/*
+ft_len Function: This function takes a string as input and returns its length by iterating through each character until it reaches the null terminator ('\0').
+
+ft_total_len Function: This function calculates the total length needed for the final string. It sums the lengths of all strings in the strs array and adds the lengths of the separators needed between them.
+
+ft_append Function: This function appends the source string (src) to the destination string (dest). It continues copying characters until it reaches the end of the source string.
+
+ft_strjoin Function: This is the main function that orchestrates the string joining process. It first checks if the size is less than or equal to zero, in which case it allocates a single byte for an empty string. 
+If the size is valid, it allocates enough memory for the concatenated string and uses the ft_append function to build the final string, inserting separators as needed.
+*/
 
 // Other option
 /*
