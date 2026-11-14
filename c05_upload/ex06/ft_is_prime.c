@@ -12,6 +12,8 @@
 
 #include <stdio.h>	
 
+// assignment: test the section up until the square root of n, if nothing found it is a prime number as it is not divisible by any other number than itself and 1
+
 int	ft_is_prime(int nb)
 {
 	int	i;

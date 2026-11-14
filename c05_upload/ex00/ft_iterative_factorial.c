@@ -12,7 +12,7 @@
 
 #include <stdio.h>	
 
-// assignment:
+// assignment: Loop iteratively, with the conventional mathematical theory
 
 int	ft_iterative_factorial(int nb)
 {

@@ -12,6 +12,8 @@
 
 #include <stdio.h>	
 
+// assignment: Loop iteratively, with the conventional mathematical theory
+
 int	ft_iterative_power(int nb, int power)
 {
 	int	result;

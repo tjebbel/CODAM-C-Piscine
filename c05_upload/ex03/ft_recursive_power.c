@@ -12,6 +12,8 @@
 
 #include <stdio.h>	
 
+// assignment: Loop recursively, with the conventional mathematical theory
+
 int	ft_recursive_power(int nb, int power)
 {
 	if (power < 0)

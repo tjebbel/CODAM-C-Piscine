@@ -12,6 +12,9 @@
 
 #include <stdio.h>	
 
+// assignment: first test the section up until the square root of n, if nothing found it is a prime number as it is not divisible by any other number than itself and 1
+// then keep checking recursively until you find a prime number, so that is the next one
+
 int	ft_is_prime(int nb)
 {
 	int	i;

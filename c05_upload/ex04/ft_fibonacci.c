@@ -12,6 +12,8 @@
 
 #include <stdio.h>	
 
+// assignment: Display the fibonacci series, with 0 and 1 (non-fibonacci numbers, and index under 0 => -1)
+
 int	ft_fibonacci(int index)
 {
 	if (index < 0)

@@ -12,6 +12,9 @@
 
 #include <stdio.h>	
 
+// assignment: only give the roots for full squares, otherwise zero, loop using i <= nb / i because ther will be overflow at INT_MAX - because 46341 * 46341 is larger than nb = 2147483647
+
+
 int	ft_sqrt(int nb)
 {
 	int	i;
