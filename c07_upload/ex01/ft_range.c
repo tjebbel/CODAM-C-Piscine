@@ -12,6 +12,8 @@
 
 #include <stdlib.h>
 
+// assignment: give the range where min is included and max is not; NULL if min >= max
+
 int	*ft_range(int min, int max)
 {
 	int	*range; // Pointer to hold the address of the allocated memory

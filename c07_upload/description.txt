@@ -1,1 +1,25 @@
-Content
+Dynamic memory with malloc
+
+Functions create new data on the heap and give this back:
+- how to duplicate a string
+- how to build an array with a series of numbers
+- joining multiple strings with a separation mark
+- converting a number between two random bases
+- splitting a string in an array of words
+
+Memory aid:
+"Measure, Malloc, Copy, Quit" - measure the size, malloc this (+1), copy the data there and mark the end ('\0' or NULL)
+
+Errors:
+- malloc(1) for empty result but forgetting to write '\0'
+- max - min can result in an int overflow at extreme numbers -> calculate with long
+- giving a pointer back to a local array - it will disappear once function returns
+
+Overview:
+1. malloc(n) gives the adres of 'n' new bytes back (or NULL).
+for 'k' integers => malloc(sizeof(int) * k). For a string length of L: L + 1 ('\0' or NULL)
+2. Always check NULL and give back the proper return value
+3. Memory that is given back has a longer life than the pointer - you should free 'n' to clear memory
+4. Using 'int **range' a function can give back a pointer through a parameter (pointer to pointer of caller)
+5. The strategy is to split it into two phase: (1) Count/Measure, reserve once, fill later
+6. ft_split gives an array of strings back ending on NULL, without empty strings, if a reservation fails halfway, free op memory what was already reserved

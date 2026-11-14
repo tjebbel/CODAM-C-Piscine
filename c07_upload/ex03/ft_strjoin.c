@@ -14,6 +14,8 @@
 #include <string.h>
 #include <stdio.h>
 
+// assignment: total length = sum of lengths + (size - 1) * len(sep) + 1; size 0 is a "" that can be freed
+
 int		ft_strlen(char *str)
 {
 	int	len;

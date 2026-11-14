@@ -12,6 +12,8 @@
 
 #include <stdlib.h>
 
+// assignment: give back an array through int **; size, 0 or -1
+
 int ft_ultimate_range(int **range, int min, int max) 
 {
     int i;

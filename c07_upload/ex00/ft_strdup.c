@@ -13,6 +13,32 @@
 #include <stdlib.h>
 #include <string.h>
 
+// assignment: Measure, malloc(len + 1), copy - only malloc (no strlen and strcopy)
+
+char *ft_strdup(char *src)
+{
+	char *dup;
+	int len;
+	int i;
+
+	len = 0;
+	while(src[len])
+		len++;
+	dup = malloc(sizeof(char) * (len + 1))
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		dup[i] = src[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return(dup);
+}
+
+
+/* 
 char	*ft_strdup(const char *s)
 {
 	char	*dup; // Pointer for the duplicated string
@@ -26,7 +52,7 @@ char	*ft_strdup(const char *s)
 	return (dup); // Return the pointer to the duplicated string
 }
 
-/* int	main(void)
+int	main(void)
 {
 	char	*original = "Hello, World!";
 	char	*duplicate = ft_strdup(original);
