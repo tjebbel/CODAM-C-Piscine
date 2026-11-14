@@ -16,6 +16,34 @@
 
 int ft_ultimate_range(int **range, int min, int max) 
 {
+    long i;
+
+    // Check if the range is valid
+    if (min >= max) {
+        *range = NULL; // Set range to NULL if invalid
+        return (0);    // Return 0 indicating no elements
+    }
+    // Allocate memory for the range
+    *range = malloc(sizeof(int) * ((long)max-min));
+    if (!*range) 
+    {
+        return (-1); // Return -1 if memory allocation fails
+    }
+
+    // Populate the allocated array
+    i = 0;
+    while (i < size) 
+    {
+        (*range)[i] = min + i; // Assign values to the array
+        i++;
+    }
+
+    return (max - min); // Return the number of elements allocated or the size as size = (long)max - min
+}
+
+/* 
+int ft_ultimate_range(int **range, int min, int max) 
+{
     int i;
 
     // Check if the range is valid
@@ -39,7 +67,7 @@ int ft_ultimate_range(int **range, int min, int max)
 
     return (max - min); // Return the number of elements allocated
 }
-/* 
+
 The function ft_ultimate_range takes a pointer to an integer pointer (int **range), and two integers min and max. 
 It creates an array of integers containing all the values from min (inclusive) to max (exclusive) and assigns the address of this array to *range. 
 The function returns the number of integers in the range, which is max - min.

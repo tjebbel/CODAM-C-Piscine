@@ -37,7 +37,6 @@ char *ft_strdup(char *src)
 	return(dup);
 }
 
-
 /* 
 char	*ft_strdup(const char *s)
 {

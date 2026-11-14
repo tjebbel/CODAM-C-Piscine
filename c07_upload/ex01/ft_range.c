@@ -14,6 +14,30 @@
 
 // assignment: give the range where min is included and max is not; NULL if min >= max
 
+
+int	*ft_range(int min, int max)
+{
+	int	*range; // Pointer to hold the address of the allocated memory
+	int	i; // Loop counter
+ 
+	// Check if the range is valid
+	if (min >= max)
+		return (NULL); // Return NULL if min is not less than max
+	 // Allocate memory for the range
+	range = malloc(sizeof(int) * ((long)max-min));
+	if (!range)
+		return (NULL);  // Return NULL if memory allocation fails
+	// Populate the array with values from min to max - 1
+	i = 0;
+	while (min + i < max)
+	{
+		range[i] = min + i; // Assign the value to the array
+		i++;
+	}
+	return (range); // Return the pointer to the array
+}
+
+/*
 int	*ft_range(int min, int max)
 {
 	int	*range; // Pointer to hold the address of the allocated memory
@@ -36,7 +60,7 @@ int	*ft_range(int min, int max)
 	return (range); // Return the pointer to the array
 }
 
-/* 
+
 int	main(void)
 {
 	int	min;
