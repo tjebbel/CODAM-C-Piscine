@@ -41,6 +41,7 @@ int ft_ultimate_range(int **range, int min, int max)
     return (max - min); // Return the number of elements allocated or the size as size = (long)max - min
 }
 
+// Other option
 /* 
 int ft_ultimate_range(int **range, int min, int max) 
 {

@@ -14,8 +14,78 @@
 #include <string.h>
 #include <stdio.h>
 
-// assignment: total length = sum of lengths + (size - 1) * len(sep) + 1; size 0 is a "" that can be freed
+// assignment: size <= 0 -> give back empty string that can be freed (malloc(1) + '\0')
+// total length = sum of lengths + (size - 1) * len(sep) + 1; size 0 is a "" that can be freed
+// ft_append copies a string and gives it back where it stopped, so that cursor moves, put separation mark between strings and quit at the end
 
+int ft_len(char *s)
+{
+    int len;
+
+    len = 0;
+    while (s[len]
+        len++;
+    return (len)
+}
+
+int ft_total_len(int size, char **strs, char *sep)
+{
+    int i;
+    int total;
+
+    total =0;
+    i = 0;
+    while (i < size)
+    {
+        total += ft_len(strs[i]);
+        i++;
+    }
+    total += ft_len(sep) * (size - 1);
+    return (total);
+}
+
+char *ft_append(char *dest, char *src)
+{
+    while (*src)
+    {
+        *dest = *src;
+        dest++;
+        src++;
+    }
+    return (dest);
+}
+
+char *ft_strjoin(int size, char **strs, char *sep)
+{
+    char *result;
+    char *cursor;
+    int i;
+
+    if (size <= 0)
+    {
+        result = malloc(1);
+        if (result)
+            result[0] = '\0';
+        return (result);
+    }
+    result = malloc(sizeof(char) * (ft_total_len(size, strs, sep) + 1));
+    if (!result)
+        return (NULL);
+    cursor = result;
+    i = 0;
+    while (i < size)
+    {
+        cursor = ft_append(cursor, str[i]);
+        if (i < size - 1)
+            cursor = ft_append(cursor, sep);
+        i++;
+    }
+    *cursor = '\0'
+    return (result)
+}
+
+// Other option
+/*
 int		ft_strlen(char *str)
 {
 	int	len;
@@ -89,8 +159,10 @@ char *ft_strjoin(int size, char **strs, char *sep)
     *res = '\0'; // Null-terminate the resulting string
     return (res - len); // Return the pointer to the start of the result string
 }
+*/
 
-/* int main() {
+/*
+int main() {
     char *strs[] = {"Hello", "World", "from", "C"};
     char *sep = ",";
     int size = sizeof(strs) / sizeof(strs[0]);
